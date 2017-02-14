@@ -13,6 +13,17 @@ namespace GlobalizationUsingNGettext
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("DefaultLocalized",
+            "{language}-{culture}/{controller}/{action}/{id}",
+            new
+            {
+                controller = "Home",
+                action = "Index",
+                id = "",
+                language = "de",
+                culture = "DE"
+            });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

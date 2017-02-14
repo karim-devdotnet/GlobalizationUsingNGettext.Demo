@@ -1,13 +1,14 @@
 ﻿@using Microsoft.AspNet.Identity
+
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    using (Html.BeginForm("[[[LogOff]]]", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Hallo " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = "" }, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("[[[Hallo]]] " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = "" }, htmlAttributes: new { title = "Manage" })
         </li>
         <li><a href="javascript:sessionStorage.removeItem('accessToken');$('#logoutForm').submit();">Abmelden</a></li>
     </ul>
@@ -15,8 +16,40 @@
 }
 else
 {
+    <table class="table_grid">
+        <tbody>
+            @{
+                int i;
+                int maxcols = 3;
+                KeyValuePair<string, i18n.LanguageTag>[] langs = LanguageHelpers.GetAppLanguages().OrderBy(x => x.Key).ToArray();
+                int cellcnt = langs.Length + 1;
+               
+            }
+        </tbody>
+    </table>
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Registrieren", "Register", "Account", routeValues: new { area = "" }, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Anmelden", "Login", "Account", routeValues: new { area = "" }, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink("[[[Registrieren]]]", "Register", "Account", routeValues: new { area = "" }, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("[[[Anmelden]]]", "Login", "Account", routeValues: new { area = "" }, htmlAttributes: new { id = "loginLink" })</li>
+        @for (i = 0; i < langs.Length; i++)
+        {
+            string langtag;
+            string title;
+            string nativelangname;
+            i18n.LanguageTag lt = langs[i].Value;
+            title = lt.NativeNameTitleCase;
+            nativelangname = langtag = lt.ToString().ToUpper();
+            if (!string.IsNullOrEmpty(title))
+            {
+                if (Context.GetPrincipalAppLanguageForRequest().GetNativeNameTitleCase() == title)
+                {
+                <li> <a>@nativelangname</a></li>
+                }
+                else
+                {
+                <li><a title="@title" href="@Url.Action("SetLanguage", "Account", new { langtag = langtag, returnUrl = Request.Url })">@nativelangname</a></li>
+                }
+            }
+        }
+
     </ul>
 }

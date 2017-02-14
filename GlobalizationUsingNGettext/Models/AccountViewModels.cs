@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GlobalizationUsingNGettext.Models
@@ -47,23 +46,23 @@ namespace GlobalizationUsingNGettext.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "E-Mail")]
+        [Display(Name = "[[[E-Mail]]]")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "E-Mail")]
+        [Display(Name = "[[[E-Mail]]]")]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Kennwort")]
+        [Display(Name = "[[[Kennwort]]]")]
         public string Password { get; set; }
 
-        [Display(Name = "Speichern?")]
+        [Display(Name = "[[[Speichern?]]]")]
         public bool RememberMe { get; set; }
     }
 
@@ -71,17 +70,17 @@ namespace GlobalizationUsingNGettext.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "E-Mail")]
+        [Display(Name = "[[[E-Mail]]]")]
         public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "\"{0}\" muss mindestens {2} Zeichen lang sein.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Kennwort")]
+        [Display(Name = "[[[Kennwort]]]")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Kennwort bestätigen")]
+        [Display(Name = "[[[Kennwort bestätigen]]]")]
         [Compare("Password", ErrorMessage = "Das Kennwort stimmt nicht mit dem Bestätigungskennwort überein.")]
         public string ConfirmPassword { get; set; }
 
@@ -93,7 +92,7 @@ namespace GlobalizationUsingNGettext.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "E-Mail")]
+        [Display(Name = "[[[E-Mail]]]")]
         public string Email { get; set; }
 
         [Required]

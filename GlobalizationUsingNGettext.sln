@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.25920.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalizationUsingNGettext", "GlobalizationUsingNGettext\GlobalizationUsingNGettext.csproj", "{C2388ED5-A7FB-4955-84CE-2CAA86594401}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalizationUsingNGettext.Model", "GlobalizationUsingNGettext.Model\GlobalizationUsingNGettext.Model.csproj", "{ED8982C0-206C-4AF7-A3F9-A90E6FF87895}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C2388ED5-A7FB-4955-84CE-2CAA86594401}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2388ED5-A7FB-4955-84CE-2CAA86594401}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2388ED5-A7FB-4955-84CE-2CAA86594401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8982C0-206C-4AF7-A3F9-A90E6FF87895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8982C0-206C-4AF7-A3F9-A90E6FF87895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8982C0-206C-4AF7-A3F9-A90E6FF87895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8982C0-206C-4AF7-A3F9-A90E6FF87895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
