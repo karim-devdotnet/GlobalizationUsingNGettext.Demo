@@ -90,8 +90,8 @@ namespace GlobalizationUsingNGettext
             // Change the types of async postback blocks that are localized
             //i18n.LocalizedApplication.Current.AsyncPostbackTypesToTranslate = "updatePanel,scriptStartupBlock,pageTitle";
 
-            // Change which languages are parsed from the request, like skipping  the "Accept-Language"-header value. The default setting is:
-            //i18n.HttpContextExtensions.GetRequestUserLanguagesImplementation = (context) => LanguageItem.ParseHttpLanguageHeader(context.Request.Headers["Accept-Language"]);
+            //Change which languages are parsed from the request, like skipping the "Accept-Language" - header value.The default setting is:
+            //i18n.HttpContextExtensions.GetRequestUserLanguagesImplementation = (context) => i18n.LanguageItem.ParseHttpLanguageHeader(context.Request.Headers["Accept-Language"]);
 
             // Override the i18n service injection. See source code for more details!
             //i18n.LocalizedApplication.Current.RootServices = new Myi18nRootServices();

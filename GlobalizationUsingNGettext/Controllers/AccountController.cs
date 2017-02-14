@@ -70,6 +70,7 @@ namespace GlobalizationUsingNGettext.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            var test = i18n.HttpContextExtensions.GetRequestUserLanguagesImplementation(HttpContext);
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
